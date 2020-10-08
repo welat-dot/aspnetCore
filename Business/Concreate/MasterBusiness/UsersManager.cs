@@ -27,7 +27,7 @@ namespace Business.Concreate.MasterBusiness
 
         public Users GetById(int id)
         {
-            return _usersDal.Get(x => x.Id == id);
+            return _usersDal.Get(filter:x => x.Id == id);
         }
     }
 }
