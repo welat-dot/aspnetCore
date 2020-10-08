@@ -1,0 +1,8 @@
+C:\Users\welatPC\source\repos\AspnetCore\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+C:\Users\welatPC\source\repos\AspnetCore\Core\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\welatPC\source\repos\AspnetCore\Core\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\welatPC\source\repos\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\Users\welatPC\source\repos\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\Users\welatPC\source\repos\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.dll
+C:\Users\welatPC\source\repos\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.pdb
+C:\Users\welatPC\source\repos\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache

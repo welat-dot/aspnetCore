@@ -1,0 +1,12 @@
+C:\Users\welatPC\source\repos\AspnetCore\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+C:\Users\welatPC\source\repos\AspnetCore\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\welatPC\source\repos\AspnetCore\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\welatPC\source\repos\AspnetCore\Entities\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\welatPC\source\repos\AspnetCore\Entities\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CopyComplete
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+C:\Users\welatPC\source\repos\AspnetCore\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
