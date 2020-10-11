@@ -14,5 +14,6 @@ namespace DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context
         }
         public DbSet<Databases> databases { get; set; }
         public DbSet<Users> users { get; set; }
+        
     }
 }

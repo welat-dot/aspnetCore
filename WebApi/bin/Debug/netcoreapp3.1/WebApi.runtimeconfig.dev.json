@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\welatPC\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\welatPC\\.nuget\\packages"
+      "/home/welat/.dotnet/store/|arch|/|tfm|",
+      "/home/welat/.nuget/packages"
     ]
   }
 }

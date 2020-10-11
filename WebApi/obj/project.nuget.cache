@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kxtNOQRqmX1qlLP16B9CAslFlnK/C/SJkbkmLQjcH12LebCfyNWOASwQTYKumRPuKXDKg5ukF7zo2fwMCE6UXg==",
+  "dgSpecHash": "0u0EsP/q6j9fNlb1rWjvQZDTUyNVLLnd1UTliaSGKOBOWNLGA8VTrwCx3nQEKfP5+cEJu0tIthiJlBmm2xBbPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\welatPC\\source\\repos\\AspnetCore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "/home/welat/Documents/proje/aspnetCore/WebApi/WebApi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
