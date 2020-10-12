@@ -1,4 +1,5 @@
-﻿using entities.MasterTable;
+﻿using Core.Utilitis.Result;
+using entities.MasterTable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Business.Abstract.MasterBusiness
 {
     public interface IUsersManager
     {
-        IQueryable<Users> GetAll();
-        Users GetById(int id);
+        IDataResult<IQueryable<Users>> GetAll();
+        IDataResult<Users> GetById(int id);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract.MasterBusiness;
+using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;
 using System;
@@ -17,19 +18,22 @@ namespace Business.Concreate.MasterBusiness
         {
             _dabasesDal = databasesDal;
         }
-        public IQueryable<Databases> GetAll()
+        public IDataResult<IQueryable<Databases>> GetAll()
         {
-            return _dabasesDal.GetList();
+            return new SuccessDataResult<IQueryable<Databases>>(_dabasesDal.GetList());
+            
         }
 
-        public Databases GetById(int id)
+        public IDataResult<Databases> GetById(int id)
         {
-            return _dabasesDal.Get(filter: x => x.Id == id);
+            return new SuccessDataResult<Databases>(_dabasesDal.Get(filter: x => x.Id == id));
+          
         }
 
-        public IQueryable<Databases> GetByUsers(int userId)
+        public IDataResult<IQueryable<Databases>> GetByUsers(int userId)
         {
-            return _dabasesDal.GetList(filter: x => x.UsersRefId == userId);
+            return new SuccessDataResult<IQueryable<Databases>>(_dabasesDal.GetList(filter: x => x.UsersRefId == userId));
+            
         }
 
        

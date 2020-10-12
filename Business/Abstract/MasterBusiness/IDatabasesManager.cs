@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract.MasterDB_DalAbstarct;
+﻿using Core.Utilitis.Result;
+using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace Business.Abstract.MasterBusiness
 {
     public interface IDatabasesManager
     {
-        Databases GetById(int id);
-        IQueryable<Databases> GetByUsers(int userId);
-        IQueryable<Databases> GetAll();
+        IDataResult<Databases> GetById(int id);
+        IDataResult<IQueryable<Databases>> GetByUsers(int userId);
+        IDataResult<IQueryable<Databases>> GetAll();
 
     }
 }

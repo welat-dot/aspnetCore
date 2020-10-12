@@ -21,6 +21,7 @@ namespace WebApi.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+
         }
 
         [HttpGet]
@@ -32,6 +33,7 @@ namespace WebApi.Controllers
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
+                
             })
             .ToArray();
         }
