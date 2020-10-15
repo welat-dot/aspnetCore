@@ -20,7 +20,19 @@ namespace Business.Concreate.MasterBusiness
 
 
         }
-            
+
+        public IResult Add(Users entity)
+        {
+            _usersDal.Add(entity);
+            return new SuccessResult(Message:"Kayit İşlemi başarılı");
+        }
+
+        public IResult Delete(Users entity)
+        {
+           _usersDal.Delete(entity);
+            return new SuccessResult(Message:"Silme İşlemi başarılı");
+        }
+
         public IDataResult<IQueryable<Users>> GetAll()
         {
             return new SuccessDataResult<IQueryable<Users>>(_usersDal.GetList());
@@ -29,6 +41,12 @@ namespace Business.Concreate.MasterBusiness
         public IDataResult<Users> GetById(int id)
         {
             return new SuccessDataResult<Users>(_usersDal.Get(filter:x => x.Id == id));
+        }
+
+        public IResult Update(Users entity)
+        {
+            _usersDal.Update(entity);
+            return new SuccessResult(Message:"Güncelleme İşlemi başarılı");
         }
     }
 }

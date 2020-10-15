@@ -18,6 +18,19 @@ namespace Business.Concreate.MasterBusiness
         {
             _dabasesDal = databasesDal;
         }
+
+        public IResult Add(Databases entity)
+        {
+            _dabasesDal.Add(entity);
+            return new SuccessResult(Message:"Eklem İşlemi Başarılı");
+        }
+
+        public IResult Delete(Databases entity)
+        {
+            _dabasesDal.Delete(entity);
+            return new SuccessResult(Message:"silme işlemi Başarılı");
+        }
+
         public IDataResult<IQueryable<Databases>> GetAll()
         {
             return new SuccessDataResult<IQueryable<Databases>>(_dabasesDal.GetList());
@@ -36,6 +49,10 @@ namespace Business.Concreate.MasterBusiness
             
         }
 
-       
+        public IResult Update(Databases entity)
+        {
+            _dabasesDal.Update(entity);
+            return new SuccessResult(Message:"Güncelleme İşlemi Başarılı");
+        }
     }
 }

@@ -11,5 +11,8 @@ namespace Business.Abstract.MasterBusiness
     {
         IDataResult<IQueryable<Users>> GetAll();
         IDataResult<Users> GetById(int id);
+        IResult Add(Users entity);
+        IResult Delete(Users entity);
+        IResult Update(Users entity);
     }
 }

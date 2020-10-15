@@ -13,6 +13,9 @@ namespace Business.Abstract.MasterBusiness
         IDataResult<Databases> GetById(int id);
         IDataResult<IQueryable<Databases>> GetByUsers(int userId);
         IDataResult<IQueryable<Databases>> GetAll();
+        IResult Update(Databases entity);
+        IResult Add(Databases entity);
+        IResult Delete(Databases entity);
 
     }
 }
