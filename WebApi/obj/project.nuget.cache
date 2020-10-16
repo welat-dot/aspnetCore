@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Cvu51pz3bSKFZ8btJ1gXxC4x7I0dmb2sayfFw84ZPwbKXbfMQEI6zZABdraawXBGRePk5L1H5oUH62BHr8gR9Q==",
+  "dgSpecHash": "8E2jDZnAh87PlP7LbwaTqrsidaFhXWtTfIAFNfwR1jYD8cqTbt0ydMt0oOe2kO1cR0s99ahJfYs/G3MMI+ITgg==",
   "success": true,
   "projectFilePath": "/home/welat/Documents/proje/aspnetCore/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
+    "/home/welat/.nuget/packages/autofac/6.0.0/autofac.6.0.0.nupkg.sha512",
     "/home/welat/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/welat/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "/home/welat/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
