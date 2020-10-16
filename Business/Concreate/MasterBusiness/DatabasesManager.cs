@@ -52,6 +52,7 @@ namespace Business.Concreate.MasterBusiness
         public IResult Update(Databases entity)
         {
             _dabasesDal.Update(entity);
+        
             return new SuccessResult(Message:"Güncelleme İşlemi Başarılı");
         }
     }
