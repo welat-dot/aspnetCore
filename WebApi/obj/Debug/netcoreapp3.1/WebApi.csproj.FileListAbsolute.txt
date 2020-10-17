@@ -50,3 +50,6 @@
 /home/welat/Documents/proje/aspnetCore/WebApi/obj/Debug/netcoreapp3.1/WebApi.dll
 /home/welat/Documents/proje/aspnetCore/WebApi/obj/Debug/netcoreapp3.1/WebApi.pdb
 /home/welat/Documents/proje/aspnetCore/WebApi/obj/Debug/netcoreapp3.1/WebApi.genruntimeconfig.cache
+/home/welat/Documents/proje/aspnetCore/WebApi/bin/Debug/netcoreapp3.1/Autofac.dll
+/home/welat/Documents/proje/aspnetCore/WebApi/bin/Debug/netcoreapp3.1/Autofac.Extensions.DependencyInjection.dll
+/home/welat/Documents/proje/aspnetCore/WebApi/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll

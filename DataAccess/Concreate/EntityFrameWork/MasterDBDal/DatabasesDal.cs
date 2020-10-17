@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concreate.EntityFrameWork.MasterDBDal
 {
-    class DatabasesDal : BaseEF_EntityRepository<Databases,MasterDBContext>, IDatabasesDal
+    public class DatabasesDal : BaseEF_EntityRepository<Databases,MasterDBContext>, IDatabasesDal
     {
     }
 

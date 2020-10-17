@@ -26,3 +26,6 @@ C:/Users/welatPC/source/repos/AspnetCore/DataAccess/obj/Debug/netcoreapp3.1/Data
 /home/welat/Documents/proje/aspnetCore/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CopyComplete
 /home/welat/Documents/proje/aspnetCore/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.dll
 /home/welat/Documents/proje/aspnetCore/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.pdb
+/home/welat/Documents/proje/aspnetCore/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.runtimeconfig.json
+/home/welat/Documents/proje/aspnetCore/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.runtimeconfig.dev.json
+/home/welat/Documents/proje/aspnetCore/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.genruntimeconfig.cache
