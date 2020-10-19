@@ -2,16 +2,16 @@ namespace Core.Utilitis.Result
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
-        public DataResult(T Data,bool Success,string Message):base(Success,Message)
+        public DataResult(T Data, bool Success, string Message) : base(Success, Message)
         {
-              data=Data;
+            data = Data;
         }
-        public DataResult(T Data,bool Success):base(Success)
+        public DataResult(T Data, bool Success) : base(Success)
         {
-          data=Data;
+            data = Data;
         }
-       
 
-       public  T data {get;} 
+
+        public T data { get; }
     }
 }

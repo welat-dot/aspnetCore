@@ -1,5 +1,4 @@
-﻿using System;
-namespace Core.Utilitis.Result
+﻿namespace Core.Utilitis.Result
 {
     public class SuccessResult : Result
     {
@@ -10,6 +9,6 @@ namespace Core.Utilitis.Result
         {
         }
 
-        
+
     }
 }

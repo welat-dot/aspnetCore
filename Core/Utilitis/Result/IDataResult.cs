@@ -1,7 +1,7 @@
 namespace Core.Utilitis.Result
 {
-    public interface IDataResult<out T>:IResult
+    public interface IDataResult<out T> : IResult
     {
-         T data {get;}
+        T data { get; }
     }
 }
