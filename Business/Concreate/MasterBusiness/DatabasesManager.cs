@@ -1,9 +1,9 @@
-﻿using Business.Abstract.MasterBusiness;
+using Business.Abstract.MasterBusiness;
 using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace Business.Concreate.MasterBusiness
 {
@@ -29,7 +29,7 @@ namespace Business.Concreate.MasterBusiness
 
         public IDataResult<IQueryable<Databases>> GetAll()
         {
-            return new SuccessDataResult<IQueryable<Databases>>(_dabasesDal.GetList());
+            return  new SuccessDataResult<IQueryable<Databases>>( _dabasesDal.GetList());
 
         }
 

@@ -1,18 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
   <ItemGroup>
-    <Folder Include="Abstract\UserDB_DalAbstarcat\"/>
-    <Folder Include="Concreate\EntityFrameWork\Contexts\UserDB_Context\"/>
-    <Folder Include="Concreate\EntityFrameWork\UsersDBDal\"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.3" />
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.2"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0"/>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj"/>
-    <ProjectReference Include="..\Entities\Entities.csproj"/>
-  </ItemGroup>
+
 </Project>

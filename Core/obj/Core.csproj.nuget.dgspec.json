@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj": {}
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj": {
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\vedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\obj\\",
+        "outputPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,13 +38,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.3, )"
             }
           },
           "imports": [

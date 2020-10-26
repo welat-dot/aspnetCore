@@ -1,5 +1,7 @@
-﻿using entities.MasterTable;
+using entities.MasterTable;
+using Entities.Concrate.MasterTable;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context
 {
@@ -11,6 +13,8 @@ namespace DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context
         }
         public DbSet<Databases> databases { get; set; }
         public DbSet<Users> users { get; set; }
+        public DbSet<UserClaims> userClaims { get; set; }
+        public DbSet<UserOperationClaims> userOperationClaims { get; set; }
 
     }
 }

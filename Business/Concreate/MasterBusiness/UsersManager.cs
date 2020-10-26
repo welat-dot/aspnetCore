@@ -1,4 +1,4 @@
-﻿using Business.Abstract.MasterBusiness;
+using Business.Abstract.MasterBusiness;
 using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;

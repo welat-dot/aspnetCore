@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj": {
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\vedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\obj\\",
+        "outputPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,13 +38,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.3, )"
             }
           },
           "imports": [
@@ -66,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\vedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,11 +95,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj"
-              },
-              "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\Entities.csproj"
+              "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\Entities.csproj"
               }
             }
           }
@@ -107,13 +110,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[3.2.2, )"
+              "version": "[3.2.3, )"
             }
           },
           "imports": [
@@ -135,14 +144,14 @@
         }
       }
     },
-    "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\Entities.csproj": {
+    "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\vedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,8 +167,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\vedat\\Desktop\\proje\\aspnetCore\\Core\\Core.csproj"
+              "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Core\\Core.csproj"
               }
             }
           }
@@ -172,6 +181,18 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

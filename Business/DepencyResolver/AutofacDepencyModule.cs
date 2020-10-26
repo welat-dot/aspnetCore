@@ -10,10 +10,10 @@ namespace Business.DepencyResolver
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<DatabasesManager>().As<IDatabasesManager>();
-            builder.RegisterType<UsersManager>().As<IUsersManager>();
-            builder.RegisterType<DatabasesDal>().As<IDatabasesDal>();
-            builder.RegisterType<UsersDal>().As<IUsersDal>();
+            builder.RegisterType<DatabasesManager>().As<IDatabasesManager>().InstancePerLifetimeScope();
+            builder.RegisterType<UsersManager>().As<IUsersManager>().InstancePerLifetimeScope();
+            builder.RegisterType<DatabasesDal>().As<IDatabasesDal>().InstancePerLifetimeScope();
+            builder.RegisterType<UsersDal>().As<IUsersDal>().InstancePerLifetimeScope();
 
 
         }
