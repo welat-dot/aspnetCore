@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Business.Abstract.MasterBusiness;
 using Core.Utilitis.Result;
 using entities.MasterTable;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,8 +20,9 @@ namespace Api.Controllers
         {
             this.databasesManager = databasesManager;
         }
-
+        
         [Route(template:"getall"),HttpGet]
+        [Authorize(Roles ="Data.L")]
         public IActionResult Get()
         {
             

@@ -1,8 +1,8 @@
 using Core.DataAccess.Entity;
+using Core.Entities.ConCreate;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context;
 using entities.MasterTable;
-using Entities.Concrate.MasterTable;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,8 +10,8 @@ namespace DataAccess.Concreate.EntityFrameWork.MasterDBDal
 {
     public class UsersDal : BaseEF_EntityRepository<Users, MasterDBContext>, IUsersDal
     {
-        private MasterDBContext dBContext; 
-        public UsersDal(MasterDBContext dBContext):base(dBContext)
+        private MasterDBContext dBContext;
+        public UsersDal(MasterDBContext dBContext) : base(dBContext)
         {
             this.dBContext = dBContext;
         }
@@ -30,6 +30,6 @@ namespace DataAccess.Concreate.EntityFrameWork.MasterDBDal
             return result.ToList();
         }
 
-      
+
     }
 }

@@ -10,6 +10,10 @@ namespace Core.Utilitis.Result
         {
             data = Data;
         }
+        public DataResult( bool Success,string Message) : base(Success,Message)
+        {
+           
+        }
 
 
         public T data { get; }

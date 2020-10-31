@@ -1,12 +1,16 @@
 using Autofac;
 using Business.DepencyResolver;
+using Core.Utilitis.Security.JWT;
+using Core.Utilitis.Security.JWT.Encryption;
 using DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Api
 {
@@ -25,6 +29,26 @@ namespace Api
             services.AddControllers();
             //services.AddOptions();
             services.AddDbContext<MasterDBContext>();
+            services.AddCors(options=> {
+                options.AddPolicy("AllowOrigin",
+                    configurePolicy:builder=>builder.WithOrigins("https://localhost:44364") );
+            });
+            var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options=> {
+                    options.TokenValidationParameters = new TokenValidationParameters {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidateLifetime = true,
+                        ValidIssuer = tokenOptions.Issuer,
+                        ValidAudience = tokenOptions.Audience,
+                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
+
+                   
+                    };
+                
+                });
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
@@ -37,12 +61,13 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder.WithOrigins("https://localhost:44364").AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,7 +1,6 @@
 using Core.DataAccess;
+using Core.Entities.ConCreate;
 using entities.MasterTable;
-
-using Entities.Concrate.MasterTable;
 using System.Collections.Generic;
 using System.Linq;
 

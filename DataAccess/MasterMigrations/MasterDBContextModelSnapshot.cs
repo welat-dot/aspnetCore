@@ -44,17 +44,7 @@ namespace DataAccess.MasterMigrations
                     b.Property<int>("UserRefId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("userClaimsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("usersId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("userClaimsId");
-
-                    b.HasIndex("usersId");
 
                     b.ToTable("userOperationClaims");
                 });
@@ -66,17 +56,13 @@ namespace DataAccess.MasterMigrations
                         .HasColumnType("int");
 
                     b.Property<string>("DatabaseName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.Property<int>("UsersRefId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("databases");
                 });
@@ -106,31 +92,17 @@ namespace DataAccess.MasterMigrations
                         .HasColumnType("varchar(8) CHARACTER SET utf8mb4")
                         .HasMaxLength(8);
 
-                    b.Property<string>("UserPassword")
-                        .HasColumnType("varchar(8) CHARACTER SET utf8mb4")
-                        .HasMaxLength(8);
+                    b.Property<byte[]>("UserPasswordHash")
+                        .HasColumnType("varbinary(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<byte[]>("UserPasswordSalt")
+                        .HasColumnType("varbinary(500)")
+                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
                     b.ToTable("users");
-                });
-
-            modelBuilder.Entity("Entities.Concrate.MasterTable.UserOperationClaims", b =>
-                {
-                    b.HasOne("Entities.Concrate.MasterTable.UserClaims", "userClaims")
-                        .WithMany()
-                        .HasForeignKey("userClaimsId");
-
-                    b.HasOne("entities.MasterTable.Users", "users")
-                        .WithMany()
-                        .HasForeignKey("usersId");
-                });
-
-            modelBuilder.Entity("entities.MasterTable.Databases", b =>
-                {
-                    b.HasOne("entities.MasterTable.Users", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

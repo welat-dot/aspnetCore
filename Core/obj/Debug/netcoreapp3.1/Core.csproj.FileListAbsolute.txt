@@ -8,4 +8,5 @@ C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.p
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\bin\Debug\netcoreapp3.1\Core.runtimeconfig.json
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\bin\Debug\netcoreapp3.1\Core.runtimeconfig.dev.json
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.genruntimeconfig.cache
+C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache

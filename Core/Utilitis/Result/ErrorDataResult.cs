@@ -8,7 +8,8 @@ namespace Core.Utilitis.Result
         public ErrorDataResult(T Data) : base(Data, Success: false)
         {
         }
-
-
+        public ErrorDataResult(string Message) : base( Success: false,Message)
+        {
+        }
     }
 }
