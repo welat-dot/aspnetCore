@@ -1,4 +1,5 @@
 using Business.Abstract.MasterBusiness;
+using Business.Contents;
 using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;
@@ -18,13 +19,13 @@ namespace Business.Concreate.MasterBusiness
         public IResult Add(Databases entity)
         {
             _dabasesDal.Add(entity);
-            return new SuccessResult(Message: "Eklem İşlemi Başarılı");
+            return new SuccessResult(Message:ResultMessages.RecordSuccess);
         }
 
         public IResult Delete(Databases entity)
         {
             _dabasesDal.Delete(entity);
-            return new SuccessResult(Message: "silme işlemi Başarılı");
+            return new SuccessResult(Message:ResultMessages.DeleteSuccess);
         }
 
         public IDataResult<IQueryable<Databases>> GetAll()
@@ -49,7 +50,7 @@ namespace Business.Concreate.MasterBusiness
         {
             _dabasesDal.Update(entity);
 
-            return new SuccessResult(Message: "Güncelleme İşlemi Başarılı");
+            return new SuccessResult(Message:ResultMessages.UpdateSuccess);
         }
     }
 }

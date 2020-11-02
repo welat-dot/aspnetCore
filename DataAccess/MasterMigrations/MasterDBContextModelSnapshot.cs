@@ -17,22 +17,22 @@ namespace DataAccess.MasterMigrations
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Entities.Concrate.MasterTable.UserClaims", b =>
+            modelBuilder.Entity("Core.Entities.ConCreate.UserClaims", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(8) CHARACTER SET utf8mb4")
-                        .HasMaxLength(8);
+                        .HasColumnType("varchar(30) CHARACTER SET utf8mb4")
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 
                     b.ToTable("userClaims");
                 });
 
-            modelBuilder.Entity("Entities.Concrate.MasterTable.UserOperationClaims", b =>
+            modelBuilder.Entity("Core.Entities.ConCreate.UserOperationClaims", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,28 +46,14 @@ namespace DataAccess.MasterMigrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserClaimRefId");
+
+                    b.HasIndex("UserRefId");
+
                     b.ToTable("userOperationClaims");
                 });
 
-            modelBuilder.Entity("entities.MasterTable.Databases", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("DatabaseName")
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
-                        .HasMaxLength(50);
-
-                    b.Property<int>("UsersRefId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("databases");
-                });
-
-            modelBuilder.Entity("entities.MasterTable.Users", b =>
+            modelBuilder.Entity("Core.Entities.ConCreate.Users", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,6 +89,56 @@ namespace DataAccess.MasterMigrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
+                });
+
+            modelBuilder.Entity("entities.MasterTable.Databases", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("DatabaseName")
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
+
+                    b.Property<DateTime>("RecordTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UsersRefId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsersRefId");
+
+                    b.ToTable("databases");
+                });
+
+            modelBuilder.Entity("Core.Entities.ConCreate.UserOperationClaims", b =>
+                {
+                    b.HasOne("Core.Entities.ConCreate.UserClaims", null)
+                        .WithMany()
+                        .HasForeignKey("UserClaimRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Entities.ConCreate.Users", null)
+                        .WithMany()
+                        .HasForeignKey("UserRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("entities.MasterTable.Databases", b =>
+                {
+                    b.HasOne("Core.Entities.ConCreate.Users", null)
+                        .WithMany()
+                        .HasForeignKey("UsersRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

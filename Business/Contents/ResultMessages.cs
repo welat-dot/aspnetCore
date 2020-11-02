@@ -10,5 +10,8 @@ namespace Business.Contents
         public static string SuccessLogin = "Login is Success";
         public static string Registered = "Registerd is Success";
         public static string AccessTokenCreated = "Access Token Created is Success";
+        public static string RecordSuccess = "Record is Success";
+        public static string DeleteSuccess = "Delete is Success";
+        public static string UpdateSuccess = "Update is Success";
     }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "laGTSbFhhiUaVfiVmlG634Jeh6YfwIh8eGpqQbEC911ePpYb4zlbKhD95QTeX6Vbdheq/nmjtPhhn2GYvCufZA==",
+  "dgSpecHash": "x5Z80FfobEltoNxcvF8evBdNUbL+p4SNrlZPsZXfWyN7J2ls6Yy+WLmEBlbq7Fi7X7MBpLY6Fe6o+vcBan4yjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vedat\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\vedat\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.9\\microsoft.aspnetcore.authentication.jwtbearer.3.1.9.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

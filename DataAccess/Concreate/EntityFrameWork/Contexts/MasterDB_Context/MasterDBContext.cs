@@ -15,8 +15,23 @@ namespace DataAccess.Concreate.EntityFrameWork.Contexts.MasterDB_Context
         public DbSet<Users> users { get; set; }
         public DbSet<UserClaims> userClaims { get; set; }
         public DbSet<UserOperationClaims> userOperationClaims { get; set; }
-       
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Users>().HasKey(p => p.Id);
+            modelBuilder.Entity<UserClaims>().HasKey(p => p.Id);
+            modelBuilder.Entity<UserOperationClaims>().HasKey(p => p.Id);
+            modelBuilder.Entity<Databases>().HasKey(p => p.Id);
+
+            modelBuilder.Entity<UserOperationClaims>().HasOne<Users>().WithMany().HasForeignKey(p => p.UserRefId);
+            modelBuilder.Entity<UserOperationClaims>().HasOne<UserClaims>().WithMany().HasForeignKey(p => p.UserClaimRefId);
+            modelBuilder.Entity<Databases>().HasOne<Users>().WithMany().HasForeignKey(p => p.UsersRefId);
+
+
+
 
 
         }
+
+
+    }
 }

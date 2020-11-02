@@ -120,6 +120,10 @@
             "Autofac": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.2.2, )"
             }
           },
           "imports": [

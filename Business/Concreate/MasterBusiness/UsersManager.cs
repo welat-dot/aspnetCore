@@ -1,4 +1,5 @@
 using Business.Abstract.MasterBusiness;
+using Business.Contents;
 using Core.Entities.ConCreate;
 using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
@@ -20,13 +21,13 @@ namespace Business.Concreate.MasterBusiness
         public IResult Add(Users entity)
         {
             _usersDal.Add(entity);
-            return new SuccessResult(Message: "Kayit İşlemi başarılı");
+            return new SuccessResult(Message: ResultMessages.RecordSuccess);
         }
 
         public IResult Delete(Users entity)
         {
             _usersDal.Delete(entity);
-            return new SuccessResult(Message: "Silme İşlemi başarılı");
+            return new SuccessResult(Message:ResultMessages.DeleteSuccess);
         }
 
         public IDataResult<IQueryable<Users>> GetAll()
@@ -57,7 +58,7 @@ namespace Business.Concreate.MasterBusiness
         public IResult Update(Users entity)
         {
             _usersDal.Update(entity);
-            return new SuccessResult(Message: "Güncelleme İşlemi başarılı");
+            return new SuccessResult(Message:ResultMessages.UpdateSuccess);
         }
     }
 }

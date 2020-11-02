@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "p5I1GKYpdKxHWupcNQdBMvf4qM5FlngCQQlaP6HgXKhry38xvxg6B0b90I7k2+EuHb9sJkC83OyD3GZnNAIEAQ==",
+  "dgSpecHash": "jkrp8MLOXKzsOkAru6NBBZV5OjVVkQpQ4zMPcviwqmLvpT03C19VEOTYjoweZ5ifSSgm3hassY6xAnC3YUFZGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\vedat\\Desktop\\AspnetCore\\AspnetCore\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vedat\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\vedat\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\vedat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
