@@ -23,12 +23,12 @@ namespace Core.Utilitis.Security.JWT
             this.configuration = configuration;
             _tokenOptions = configuration.GetSection(key: "TokenOptions").Get<TokenOptions>();
         }
-        public AccessToken CreateToken(Users user, List<UserClaims> claims)
+        public AccessToken CreateToken(Users user, List<UserClaims> claims,string dataBaseName)
         {
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialHelper.CreateSigningCredentials(securityKey);
             _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
-            var jwt = CreateJwtSecurityToken(tokenOptions: _tokenOptions, user: user,signingCredentials:signingCredentials, userClaims: claims);
+            var jwt = CreateJwtSecurityToken(tokenOptions: _tokenOptions, user: user,signingCredentials:signingCredentials, userClaims: claims,dataBaseName);
             var JwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var token = JwtSecurityTokenHandler.WriteToken(jwt);
             return new AccessToken
@@ -38,25 +38,26 @@ namespace Core.Utilitis.Security.JWT
 
             };
         }
-        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, Users user, SigningCredentials signingCredentials, List<UserClaims> userClaims)
+        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, Users user, SigningCredentials signingCredentials, List<UserClaims> userClaims, string dataBaseName)
         {
             var jwt = new JwtSecurityToken(
                 issuer:tokenOptions.Issuer,
                 audience:tokenOptions.Audience,
                 expires:_accessTokenExpiration,
                 notBefore:DateTime.Now,
-                claims:SetClaims(user,userClaims),
+                claims:SetClaims(user,userClaims,dataBaseName),
                 signingCredentials:signingCredentials                
                 );
             return jwt;
         }
-        private IEnumerable<Claim> SetClaims(Users users,List<UserClaims> userClaims)
+        private IEnumerable<Claim> SetClaims(Users users,List<UserClaims> userClaims,string dataBaseName)
         {
             var claims = new List<Claim>();
             claims.AddNameIdentityfier(users.Id.ToString());
             claims.AddEmail(users.EmailAdress);
             claims.AddName($"{users.FirstName} {users.LastName}");
             claims.AddRoles(userClaims.Select(x => x.Name).ToArray());
+            claims.AddDataName(dataBaseName);
             return claims;
         }
     }

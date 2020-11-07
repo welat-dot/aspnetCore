@@ -22,17 +22,19 @@ namespace Api.Controllers
         }
         
         [Route(template:"getall"),HttpGet]
-        [Authorize(Roles ="Data.L")]
+        [Authorize()]
         public IActionResult Get()
         {
-            
+            //var a = HttpContext.User.Claims.ToList();
+            //var b = a[3].Value;
             var result = databasesManager.GetAll();
             if (result.success)
                 return Ok(result.data);
             return BadRequest();
         }
         [Route(template:"add"),HttpPost]
-        public IActionResult Add([FromBody]Databases database)
+        [Authorize()]
+        public IActionResult Add(Databases database)
         {
             var result = databasesManager.Add(database);
             if (result.success)

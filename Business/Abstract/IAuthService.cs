@@ -7,12 +7,12 @@ namespace Business.Abstract
 {
     public interface IAuthService
     {
-        IDataResult<Users> Register(ForRegisterDTO forRegisterDTO, string password);
+        IResult Register(ForRegisterDTO forRegisterDTO, string password);
         IDataResult<Users> Login(ForLoginDto forLoginDto);
         IDataResult<Users> userMailExist(string email);
         IDataResult<Users> userUserNameExist(string username);
         IDataResult<Users> userEmaiOrNameExist(string emailOrName);
-        IDataResult<AccessToken> CreateAccessToken(Users users);
+        IDataResult<AccessToken> CreateAccessToken(Users users, string databaseName);
 
     }
 }

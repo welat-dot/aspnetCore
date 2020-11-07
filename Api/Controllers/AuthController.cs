@@ -25,7 +25,7 @@ namespace Api.Controllers
             {
                 return BadRequest(userLogin.message);
             }
-            var result = authService.CreateAccessToken(userLogin.data);
+            var result = authService.CreateAccessToken(userLogin.data,forLoginDto.DataBaseName);
             if(result.success)
             {
                 return Ok(result.data);
@@ -35,19 +35,13 @@ namespace Api.Controllers
         [Route(template: "Register")]
         public IActionResult Register(ForRegisterDTO  forRegisterDTO)
         {
-            var userExists = authService.userMailExist(forRegisterDTO.Email);
-            var nameExist = authService.userUserNameExist(forRegisterDTO.UserName);
-            if(userExists.success==true || nameExist.success==true)
-            {
-                return BadRequest("kullanıcı Kayıtlı");
-            }
+           
             var registerResult = authService.Register(forRegisterDTO, forRegisterDTO.Password);
-            var result = authService.CreateAccessToken(registerResult.data);
-            if(result.success)
+            if(registerResult.success)
             {
-                return Ok(result.data);
+                return Ok(registerResult.message);
             }
-            return BadRequest(result.message);
+            return BadRequest(registerResult.message);
         }
     }
 }

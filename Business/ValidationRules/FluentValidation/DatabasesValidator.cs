@@ -10,6 +10,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(d => d.DatabaseName).NotEmpty();
             RuleFor(d => d.DatabaseName).Length(5, 50);
             RuleFor(d => d.UsersRefId).NotEmpty();
+          
         }
     }
 }

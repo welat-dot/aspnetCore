@@ -15,6 +15,7 @@ namespace Business.Abstract.MasterBusiness
         IDataResult< List<UserClaims>> GetClaims(Users user);
         IDataResult<Users> GetByMail(string email);
         IDataResult<Users> GetByUserName(string userName);
+      
 
     }
 }

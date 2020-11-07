@@ -20,10 +20,10 @@ namespace Business.Concreate
             this.tokenHelper = tokenHelper;
         }
 
-        public IDataResult<AccessToken> CreateAccessToken(Users users)
+        public IDataResult<AccessToken> CreateAccessToken(Users users,string databaseName)
         {
             var claim = usersManager.GetClaims(user: users).data;
-            var token = tokenHelper.CreateToken(user: users, claims: claim);
+            var token = tokenHelper.CreateToken(user: users, claims: claim,databaseName);
             return new SuccessDataResult<AccessToken>(token, ResultMessages.AccessTokenCreated);
         }
         public IDataResult<Users> Login(ForLoginDto forLoginDto)
@@ -37,13 +37,25 @@ namespace Business.Concreate
             {
                 return new ErrorDataResult<Users>(ResultMessages.ErrorPassword);
             }
+            if (forLoginDto.DataBaseName == null)
+                forLoginDto.DataBaseName = "all";
             return new SuccessDataResult<Users>(CheckLogin.data, ResultMessages.SuccessLogin);
         }
 
-        public IDataResult<Users> Register(ForRegisterDTO forRegisterDTO, string password)
+        public IResult Register(ForRegisterDTO forRegisterDTO, string password)
         {
+            if(!userMailExist(forRegisterDTO.Email).success)
+            {
+                if (userUserNameExist(forRegisterDTO.UserName).success)
+                    return new ErrorResult(Message: "Kullanıcı Adı tekrarlı");
+            }
+            else
+            {
+                return new ErrorResult(Message:"Mail tekrarlı");
+            }
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreateHash(forRegisterDTO.Password,out passwordHash, out passwordSalt);
+       
 
             var user = new Users { 
             EmailAdress=forRegisterDTO.Email,
@@ -55,7 +67,7 @@ namespace Business.Concreate
             UserPasswordSalt=passwordSalt            
             };
             usersManager.Add(user);
-            return new SuccessDataResult<Users>(user, Message: ResultMessages.Registered);
+            return new SuccessResult(Message: ResultMessages.Registered+"for  UserName= "+user.UserName);
         }
 
         public IDataResult<Users> userEmaiOrNameExist(string emailOrName)

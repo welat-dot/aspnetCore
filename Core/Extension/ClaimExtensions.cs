@@ -26,6 +26,11 @@ namespace Core.Extension
             roles.ToList().ForEach(role =>claims.Add(new Claim(type:ClaimTypes.Role, value: role)));
            
         }
+        public static void AddDataName(this ICollection<Claim> claims, string dataBaseName )
+        {
+            claims.Add(new Claim(type: ClaimTypes.Name, value: dataBaseName));
+
+        }
 
     }
 }

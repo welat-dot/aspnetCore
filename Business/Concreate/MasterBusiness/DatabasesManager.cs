@@ -1,5 +1,7 @@
 using Business.Abstract.MasterBusiness;
 using Business.Contents;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspect.AutoFac.Validation;
 using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using entities.MasterTable;
@@ -15,7 +17,7 @@ namespace Business.Concreate.MasterBusiness
         {
             _dabasesDal = databasesDal;
         }
-
+        [ValidationAspect(typeof(DatabasesValidator), Priority = 1)]
         public IResult Add(Databases entity)
         {
             _dabasesDal.Add(entity);

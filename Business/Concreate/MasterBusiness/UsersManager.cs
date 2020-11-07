@@ -60,5 +60,6 @@ namespace Business.Concreate.MasterBusiness
             _usersDal.Update(entity);
             return new SuccessResult(Message:ResultMessages.UpdateSuccess);
         }
+
     }
 }

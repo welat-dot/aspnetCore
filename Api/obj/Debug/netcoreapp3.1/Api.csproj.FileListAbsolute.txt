@@ -59,3 +59,5 @@ C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\bin\Debug\netcoreapp3.1\Microso
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\obj\Debug\netcoreapp3.1\Api.csproj.CoreCompileInputs.cache
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\obj\Debug\netcoreapp3.1\Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+C:\Users\vedat\Desktop\AspnetCore\AspnetCore\Api\bin\Debug\netcoreapp3.1\Castle.Core.dll
