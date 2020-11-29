@@ -1,4 +1,4 @@
-﻿using Core.Utilitis.Result;
+using Core.Utilitis.Result;
 using entities.MasterTable;
 using System.Linq;
 
@@ -12,6 +12,7 @@ namespace Business.Abstract.MasterBusiness
         IResult Update(Databases entity);
         IResult Add(Databases entity);
         IResult Delete(Databases entity);
+        IResult CheckDatabasExist(string dataBaseName);
 
     }
 }

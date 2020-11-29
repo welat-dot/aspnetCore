@@ -9,5 +9,6 @@ namespace Business.Abstract.MasterBusiness
     public interface IUserOperationClaimManager
     {
         IResult Add(UserOperationClaims userOperationClaims);
+        void AddForRegister(int userid);
     }
 }

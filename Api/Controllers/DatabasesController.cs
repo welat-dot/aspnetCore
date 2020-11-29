@@ -22,24 +22,36 @@ namespace Api.Controllers
         }
         
         [Route(template:"getall"),HttpGet]
-        [Authorize()]
+        [Authorize(Roles = "SystemAdministor")]
         public IActionResult Get()
         {
-            //var a = HttpContext.User.Claims.ToList();
-            //var b = a[3].Value;
             var result = databasesManager.GetAll();
-            if (result.success)
-                return Ok(result.data);
+           if (result.success)
+             return Ok(result.data);
             return BadRequest();
         }
+        [Authorize(Roles = "DatabasesList")]
+        [Route(template: "getDatabases"), HttpGet]
+        public IActionResult GetUserDatabasses()
+        {
+            var a = HttpContext.User.Claims.ToList();
+            int UserId = Convert.ToInt32(a[0].Value);
+            var result = databasesManager.GetByUsers(UserId);
+            if (result.success)
+                return Ok(result.data);
+            return BadRequest(result.message);
+        }
         [Route(template:"add"),HttpPost]
-        [Authorize()]
+        [Authorize(Roles = "DatabasesCreate")]
         public IActionResult Add(Databases database)
         {
-            var result = databasesManager.Add(database);
+            var a = HttpContext.User.Claims.ToList();
+            int UserId = Convert.ToInt32(a[0].Value);
+            database.UsersRefId = UserId;
+            var result = databasesManager.Add(entity:database);
             if (result.success)
-                return Ok();
-            return BadRequest();
+                return Ok(result);
+            return BadRequest(result);
         }
     }
 }

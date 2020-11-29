@@ -4,6 +4,7 @@ using Core.Utilitis.Result;
 using DataAccess.Abstract.MasterDB_DalAbstarct;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concreate.MasterBusiness
@@ -19,6 +20,13 @@ namespace Business.Concreate.MasterBusiness
         {
             userClaimDal.Add(userClaim);
             return new SuccessResult();
+        }
+
+        public IDataResult<IQueryable<UserClaims>> GetUserClaim()
+        {
+            IQueryable<UserClaims> claims = userClaimDal.GetList();
+            return new SuccessDataResult<IQueryable<UserClaims>>(userClaimDal.GetList());              
+            
         }
     }
 }

@@ -12,9 +12,10 @@ namespace Core.DataAccess
     {
         T Get(Expression<Func<T, bool>> filter);
         IQueryable<T> GetList(Expression<Func<T, bool>> filter = null);
-        void Add(T Entity);
+        T Add(T Entity);
         void Update(T Entity);
         void Delete(T Entity);
+        void AddRange(List<T> EntityList);
         
     }
 }

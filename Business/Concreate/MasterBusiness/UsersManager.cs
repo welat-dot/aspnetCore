@@ -18,10 +18,10 @@ namespace Business.Concreate.MasterBusiness
 
         }
 
-        public IResult Add(Users entity)
+        public IDataResult<Users> Add(Users entity)
         {
-            _usersDal.Add(entity);
-            return new SuccessResult(Message: ResultMessages.RecordSuccess);
+           
+            return new SuccessDataResult<Users>(Data: _usersDal.Add(entity), Message: ResultMessages.RecordSuccess);
         }
 
         public IResult Delete(Users entity)

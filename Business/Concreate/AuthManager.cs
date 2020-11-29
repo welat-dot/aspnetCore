@@ -13,19 +13,22 @@ namespace Business.Concreate
     {
         private IUsersManager usersManager;
         private ITokenHelper tokenHelper;
+        private IUserOperationClaimManager userOperationClaimManager;
 
-        public AuthManager(IUsersManager usersManager, ITokenHelper tokenHelper)
+        public AuthManager(IUsersManager usersManager, ITokenHelper tokenHelper,IUserOperationClaimManager userOperationClaimManager)
         {
             this.usersManager = usersManager;
             this.tokenHelper = tokenHelper;
+            this.userOperationClaimManager = userOperationClaimManager;
         }
-
+        //Master Create Token
         public IDataResult<AccessToken> CreateAccessToken(Users users,string databaseName)
         {
             var claim = usersManager.GetClaims(user: users).data;
             var token = tokenHelper.CreateToken(user: users, claims: claim,databaseName);
             return new SuccessDataResult<AccessToken>(token, ResultMessages.AccessTokenCreated);
         }
+        //Master Login
         public IDataResult<Users> Login(ForLoginDto forLoginDto)
         {
            var CheckLogin = userEmaiOrNameExist(forLoginDto.UserName);
@@ -37,11 +40,10 @@ namespace Business.Concreate
             {
                 return new ErrorDataResult<Users>(ResultMessages.ErrorPassword);
             }
-            if (forLoginDto.DataBaseName == null)
-                forLoginDto.DataBaseName = "all";
+            forLoginDto.DataBaseName = "MasterUser";
             return new SuccessDataResult<Users>(CheckLogin.data, ResultMessages.SuccessLogin);
         }
-
+        //Register
         public IResult Register(ForRegisterDTO forRegisterDTO, string password)
         {
             if(!userMailExist(forRegisterDTO.Email).success)
@@ -66,10 +68,14 @@ namespace Business.Concreate
             UserPasswordHash=passwordHash,
             UserPasswordSalt=passwordSalt            
             };
-            usersManager.Add(user);
+           Users users  = usersManager.Add(user).data;
+          userOperationClaimManager.AddForRegister(users.Id);
+
+           
+           
             return new SuccessResult(Message: ResultMessages.Registered+"for  UserName= "+user.UserName);
         }
-
+        //Master Exits Controll
         public IDataResult<Users> userEmaiOrNameExist(string emailOrName)
         {
             var mailCheck = userMailExist(emailOrName);
@@ -84,7 +90,6 @@ namespace Business.Concreate
             }
             return new ErrorDataResult<Users>("Kullanıcı Bulunamadı");
         }
-
         public IDataResult<Users> userMailExist(string email)
         {
            Users userCheck = usersManager.GetByMail(email).data;
@@ -94,7 +99,6 @@ namespace Business.Concreate
             }
             return new SuccessDataResult<Users>(userCheck);
         }
-
         public IDataResult<Users> userUserNameExist(string username)
         {
             Users userCheck = usersManager.GetByUserName(username).data;

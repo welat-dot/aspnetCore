@@ -9,7 +9,7 @@ namespace Business.Abstract.MasterBusiness
     {
         IDataResult<IQueryable<Users>> GetAll();
         IDataResult<Users> GetById(int id);
-        IResult Add(Users entity);
+        IDataResult<Users> Add(Users entity);
         IResult Delete(Users entity);
         IResult Update(Users entity);
         IDataResult< List<UserClaims>> GetClaims(Users user);

@@ -22,6 +22,10 @@ namespace Business.DepencyResolver
             builder.RegisterType<UsersDal>().As<IUsersDal>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+            builder.RegisterType<UserClaimDal>().As<IUserClaimDal>();
+            builder.RegisterType<UserOperationClaimDal>().As<IUserOperationClaimDal>();
+            builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimManager>();
+            builder.RegisterType<UserClaimManager>().As<IUserClaimManager>();
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()

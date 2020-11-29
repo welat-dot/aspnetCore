@@ -41,10 +41,11 @@ namespace Core.DataAccess.Entity
 
         }
 
-        public void Add(TEntity Entity)
+        public TEntity Add(TEntity Entity)
         {
-           var x= Context.Set<TEntity>().Add(Entity);
-            Context.SaveChanges();            
+           var x= Context.Set<TEntity>().Add(Entity);            
+            Context.SaveChanges();
+            return x.Entity;
 
         }
 
@@ -58,12 +59,16 @@ namespace Core.DataAccess.Entity
         }
 
         public void Delete(TEntity Entity)
-        {
-           
+        {          
                 Context.Set<TEntity>().Remove(Entity);
-                Context.SaveChanges();
-            
+                Context.SaveChanges();           
 
+        }
+
+        public void AddRange(List<TEntity> EntityList)
+        {
+            Context.Set<TEntity>().AddRange(EntityList);
+            Context.SaveChanges();
         }
     }
 }
